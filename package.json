@@ -18,5 +18,11 @@
   "dependencies": {
     "@badeball/cypress-cucumber-preprocessor": "^20.0.5",
     "@bahmutov/cypress-esbuild-preprocessor": "github:bahmutov/cypress-esbuild-preprocessor"
+  },
+  "cypress-cucumber-preprocessor": {
+    "json": {
+      "enabled": true
+    },
+    "stepDefinitions": "cypress/e2e/page/**.ts"
   }
 }
