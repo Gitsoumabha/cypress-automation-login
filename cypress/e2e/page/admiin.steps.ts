@@ -1,10 +1,20 @@
-import { Given, When } from "@badeball/cypress-cucumber-preprocessor";
+import { Given, Then, When } from "@badeball/cypress-cucumber-preprocessor";
 import { adminPage } from "./admin-page";
+import { LoginPage } from "./login-page";
 
-const adminPage = new adminPage();
+const AdminPage = new adminPage();
+const loginPage = new LoginPage();
 
-Given("Go to the admin menu", () => {
-    adminPage.verifyAdmin()
+Given("I visit the login page", () => {
+    loginPage.launchApp();
+  });
+
+When("I used the valid credentials", () => {
+    loginPage.login(Cypress.env('USERNAME'),Cypress.env('PASSWORD'));
+  });
+
+Then("Go to the admin menu", () => {
+    AdminPage.verifyAdmin();
 });
 
 

@@ -7,7 +7,7 @@ export class adminPage {
         cy.get(this.adminMenu).first().click();
         cy.get(this.pageTitle).should(
             "have.text",
-            "Admin"
+            "AdminUser Management"
           );
     }
     
