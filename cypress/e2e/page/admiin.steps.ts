@@ -13,8 +13,12 @@ When("I used the valid credentials", () => {
     loginPage.login(Cypress.env('USERNAME'),Cypress.env('PASSWORD'));
   });
 
-Then("Go to the admin menu", () => {
+Then("Go to the admin menu and assert the breadcrumb menu", () => {
     AdminPage.verifyAdmin();
+});
+
+Then("Check add button", () => {
+    AdminPage.addButton();
 });
 
 
